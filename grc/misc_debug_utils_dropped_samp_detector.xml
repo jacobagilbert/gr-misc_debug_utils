@@ -11,4 +11,6 @@
     <type>complex</type>
   </sink>
 
+  <doc>Block that will detect and print overflow information from UHD devices</doc>
+
 </block>

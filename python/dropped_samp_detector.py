@@ -1,23 +1,23 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# 
+#
 # Copyright 2016 <+YOU OR YOUR COMPANY+>.
-# 
+#
 # This is free software; you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation; either version 3, or (at your option)
 # any later version.
-# 
+#
 # This software is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
-# 
+#
 # You should have received a copy of the GNU General Public License
 # along with this software; see the file COPYING.  If not, write to
 # the Free Software Foundation, Inc., 51 Franklin Street,
 # Boston, MA 02110-1301, USA.
-# 
+#
 
 import numpy
 import pmt
@@ -57,12 +57,12 @@ class dropped_samp_detector(gr.sync_block):
                 else:
                     time = sum(pmt.to_python(tag.value))
                     samp = (time - self.base_time) * self.rate
-                    error = round(samp - tag.offset, 5)
+                    error = samp - tag.offset
 
 
-                    if error:
-                        duration_us = 1000000.0 * error / self.rate
-                        print "\nOVERFLOW ERROR !  " + repr(error) + " S, " + repr(round(duration_us,2)) + " us ",
+                    if round(error, 5):
+                        duration_ms = 1000.0 * error / self.rate
+                        print "\nDETECTED OVERFLOW!  " + repr(round(error, 5)) + " samples \t(" + repr(round(duration_ms,5)) + " ms)  ",
                         #print "\n\tTAG VAL " + repr(tag.value) + " received at " + repr(tag.offset) + " - sample " + repr(round(samp, 5)) + " ",
 
                         # update zero sample time so error does not accumulate
@@ -75,7 +75,7 @@ class dropped_samp_detector(gr.sync_block):
                 oldrate = self.rate
                 self.rate = pmt.to_python(tag.value)
                 if (self.rate != oldrate) and tag.offset:
-                    print "\nWARNING! rate change - new rate is " + repr(self.rate) + " " + repr(oldrate),
+                    print "\nDETECTED RATE CHANGE! - new rate is " + repr(self.rate) + " " + repr(oldrate),
 
         # consume/produce everything
         return nitems
