@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<block>
+  <name>Dropped Sample Detector</name>
+  <key>misc_debug_utils_dropped_samp_detector</key>
+  <category>Debug Utilities</category>
+  <import>import misc_debug_utils</import>
+  <make>misc_debug_utils.dropped_samp_detector()</make>
+
+  <sink>
+    <name>in</name>
+    <type>complex</type>
+  </sink>
+
+</block>
