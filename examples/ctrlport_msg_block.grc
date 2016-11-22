@@ -46,7 +46,7 @@
     </param>
     <param>
       <key>id</key>
-      <value>top_block</value>
+      <value>ctrlport_msg_block_test</value>
     </param>
     <param>
       <key>max_nouts</key>
@@ -132,7 +132,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(56, 412)</value>
+      <value>(136, 340)</value>
     </param>
     <param>
       <key>_rotation</key>
@@ -153,6 +153,37 @@
     <param>
       <key>type</key>
       <value>float</value>
+    </param>
+  </block>
+  <block>
+    <key>blocks_ctrlport_monitor</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>en</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(208, 12)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>blocks_ctrlport_monitor_0</value>
     </param>
   </block>
   <block>
@@ -206,7 +237,7 @@
     </param>
     <param>
       <key>_coordinate</key>
-      <value>(144, 300)</value>
+      <value>(136, 236)</value>
     </param>
     <param>
       <key>_rotation</key>
