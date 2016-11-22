@@ -26,6 +26,8 @@ include_directories(${Boost_INCLUDE_DIR})
 link_directories(${Boost_LIBRARY_DIRS})
 
 list(APPEND misc_debug_utils_sources
+    ctrlport_msg_block_impl.cc
+    ctrlport_msg_stream_impl.cc
 )
 
 set(misc_debug_utils_sources "${misc_debug_utils_sources}" PARENT_SCOPE)

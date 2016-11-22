@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<block>
+  <name>ControlPort MSG (Null)</name>
+  <key>misc_debug_utils_ctrlport_msg_block</key>
+  <category>[DEBUG]</category>
+  <import>import misc_debug_utils</import>
+  <make>misc_debug_utils.ctrlport_msg_block()</make>
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+
+  <doc>Null Block - Consumes anything does nothing, prints a message when RPC is setup.</doc>
+
+</block>

@@ -63,6 +63,21 @@ if(NOT Boost_FOUND)
     message(FATAL_ERROR "Boost required to compile misc_debug_utils")
 endif()
 
+
+########################################################################
+# Handle ControlPort Stuff
+########################################################################
+find_package(Thrift)
+
+if(THRIFT_FOUND)
+  message(STATUS "CTRLPORT Enabled!")
+  set(GR_CTRLPORT True)
+  ADD_DEFINITIONS(-DGR_CTRLPORT)
+else()
+  message(STATUS "Not building for CTRLPORT")
+endif(THRIFT_FOUND)
+
+
 ########################################################################
 # Install directories
 ########################################################################

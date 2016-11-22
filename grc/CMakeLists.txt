@@ -18,5 +18,7 @@
 # Boston, MA 02110-1301, USA.
 
 install(FILES
-    misc_debug_utils_dropped_samp_detector.xml DESTINATION share/gnuradio/grc/blocks
+    misc_debug_utils_dropped_samp_detector.xml
+    misc_debug_utils_ctrlport_msg_block.xml
+    misc_debug_utils_ctrlport_msg_stream.xml DESTINATION share/gnuradio/grc/blocks
 )

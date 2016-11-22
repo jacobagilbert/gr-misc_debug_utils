@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<block>
+  <name>ControlPort MSG+Stream</name>
+  <key>misc_debug_utils_ctrlport_msg_stream</key>
+  <category>[DEBUG]</category>
+  <import>import misc_debug_utils</import>
+  <make>misc_debug_utils.ctrlport_msg_stream()</make>
+
+  <sink>
+    <name>in</name>
+    <type>message</type>
+  </sink>
+  <sink>
+    <name>f</name>
+    <type>float</type>
+  </sink>
+
+  <source>
+    <name>out</name>
+    <type>message</type>
+  </source>
+
+  <doc>Null Block - Consumes anything does nothing, prints a message when RPC is setup.</doc>
+
+</block>

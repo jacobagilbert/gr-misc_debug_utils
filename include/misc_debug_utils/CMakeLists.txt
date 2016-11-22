@@ -22,5 +22,6 @@
 ########################################################################
 install(FILES
     api.h
-    DESTINATION include/misc_debug_utils
+    ctrlport_msg_block.h
+    ctrlport_msg_stream.h DESTINATION include/misc_debug_utils
 )
