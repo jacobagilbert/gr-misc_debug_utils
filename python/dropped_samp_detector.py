@@ -51,7 +51,7 @@ class dropped_samp_detector(gr.sync_block):
                 # on the first sample, don't check for errors
                 if tag.offset == 0:
                     self.base_time = sum(pmt.to_python(tag.value))
-                    print "first tag " + repr(tag.value) + ", base_time set to " + repr(self.base_time)
+                    print ("first tag " + repr(tag.value) + ", base_time set to " + repr(self.base_time))
 
                 # other times we get this, check for errors
                 else:
@@ -62,7 +62,7 @@ class dropped_samp_detector(gr.sync_block):
 
                     if round(error, 5):
                         duration_ms = 1000.0 * error / self.rate
-                        print "\nDETECTED OVERFLOW!  " + repr(round(error, 5)) + " samples \t(" + repr(round(duration_ms,5)) + " ms)  ",
+                        print ("\nDETECTED OVERFLOW!  " + repr(round(error, 5)) + " samples \t(" + repr(round(duration_ms,5)) + " ms)  ",)
                         #print "\n\tTAG VAL " + repr(tag.value) + " received at " + repr(tag.offset) + " - sample " + repr(round(samp, 5)) + " ",
 
                         # update zero sample time so error does not accumulate
@@ -75,7 +75,7 @@ class dropped_samp_detector(gr.sync_block):
                 oldrate = self.rate
                 self.rate = pmt.to_python(tag.value)
                 if (self.rate != oldrate) and tag.offset:
-                    print "\nDETECTED RATE CHANGE! - new rate is " + repr(self.rate) + " " + repr(oldrate),
+                    print ("\nDETECTED RATE CHANGE! - new rate is " + repr(self.rate) + " " + repr(oldrate),)
 
         # consume/produce everything
         return nitems
